@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramaiah Polytechnic Timetable</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Ramaiah Polytechnic</h1>
+            <p>Class Schedule Website</p>
+        </div>
+
+        <div class="controls">
+            <button class="toggle-btn active" id="todayBtn">
+                <i class="fas fa-calendar-day"></i> Today's Schedule
+            </button>
+            <button class="toggle-btn" id="weekBtn">
+                <i class="fas fa-calendar-week"></i> Full Week
+            </button>
+        </div>
+
+        <div class="day-filters" id="dayFilters">
+            <button class="day-btn active" data-day="all">All Days</button>
+            <button class="day-btn" data-day="Monday">Monday</button>
+            <button class="day-btn" data-day="Tuesday">Tuesday</button>
+            <button class="day-btn" data-day="Wednesday">Wednesday</button>
+            <button class="day-btn" data-day="Thursday">Thursday</button>
+            <button class="day-btn" data-day="Friday">Friday</button>
+            <button class="day-btn" data-day="Saturday">Saturday</button>
+        </div>
+
+        <div class="timetable-container">
+            <div id="timetableContent">
+                <div class="loading">
+                    <i class="fas fa-spinner"></i>
+                    <p>Loading timetable...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+<footer style="text-align:center; font-size: 0.8rem; opacity: 0.6; margin-top: 2rem;">
+  © 2025 built by Mohammed Siddiq-2nd Year • Ramaiah Polytechnic
+</footer>
+
+</body>
+</html>
