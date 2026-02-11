@@ -18,8 +18,8 @@ const timetableData = {
         { time: "9:00–10:00", subject: "SE", type: "Theory", batch: "All" },
         { time: "10:00–11:00", subject: "IC", type: "Theory", batch: "All" },
         { time: "11:00–12:00", subject: "DSP", type: "Theory", batch: "All" },
-        { time: "1:30–3:30", subject: "OS / SE", type: "Lab", batch: "b1 / b2" },
-        { time: "3:30–4:30", subject: "Sports", type: "Activity", batch: "All" }
+        { time: "1:00–3:00", subject: "OS / SE", type: "Lab", batch: "b1 / b2" },
+        { time: "3:00–4:30", subject: "Sports", type: "Activity", batch: "All" }
     ],
     Thursday: [
         { time: "9:00–11:00", subject: "SE / OS", type: "Lab", batch: "b1 / b2" },
@@ -32,8 +32,8 @@ const timetableData = {
         { time: "9:00–10:00", subject: "JAVA", type: "Theory", batch: "All" },
         { time: "10:00–11:00", subject: "OS", type: "Theory", batch: "All" },
         { time: "11:00–12:00", subject: "SE", type: "Theory", batch: "All" },
-        { time: "1:30–3:30", subject: "JAVA / DSP", type: "Lab", batch: "b1 / b2" },
-        { time: "3:30–4:30", subject: "IC", type: "Theory", batch: "All" }
+        { time: "1:00–3:00", subject: "JAVA / DSP", type: "Lab", batch: "b1 / b2" },
+        { time: "3:00–4:00", subject: "IC", type: "Theory", batch: "All" }
     ],
     Saturday: [
         { time: "9:00–10:00", subject: "OS", type: "Theory", batch: "All" },
@@ -241,3 +241,11 @@ function isCurrentTime(timeSlot) {
 
 // Initialize day filters as hidden for today view
 dayFilters.style.display = 'none';
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('Service Worker registered!', reg))
+            .catch(err => console.log('Registration failed:', err));
+    });
+}
